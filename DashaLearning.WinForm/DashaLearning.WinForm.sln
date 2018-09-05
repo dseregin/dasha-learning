@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashaLearning.WinForm", "DashaLearning.WinForm\DashaLearning.WinForm.csproj", "{FD205285-E264-4FE2-82E0-7BB27DFCB1EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{67B2A1CC-6143-4C2F-B93D-FC9CA60A3203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase.Mapping", "..\DataBase.Mapping\DataBase.Mapping.csproj", "{2DCEA24B-8472-43A7-81F5-70DA7A6C1604}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashaLearning.Model", "DashaLearning.Model\DashaLearning.Model.csproj", "{08568D3C-1F0F-4DCC-8ED8-E3A657035AB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashaLearning.DataBase.Npgsql", "DashaLearning.DataBase.Npgsql\DashaLearning.DataBase.Npgsql.csproj", "{D886F68A-30C5-4975-A04A-EA13034B8C3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashaLearning.RepositoryContract", "DashaLearning.RepositoryContract\DashaLearning.RepositoryContract.csproj", "{809900FC-2BA5-409D-BE0B-7E5CBB39BA04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashaLearning.ServiceContract", "DashaLearning.ServiceContract\DashaLearning.ServiceContract.csproj", "{F06DEEDE-4AED-4883-9066-E8F92B59C30E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD205285-E264-4FE2-82E0-7BB27DFCB1EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD205285-E264-4FE2-82E0-7BB27DFCB1EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD205285-E264-4FE2-82E0-7BB27DFCB1EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD205285-E264-4FE2-82E0-7BB27DFCB1EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DCEA24B-8472-43A7-81F5-70DA7A6C1604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DCEA24B-8472-43A7-81F5-70DA7A6C1604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DCEA24B-8472-43A7-81F5-70DA7A6C1604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DCEA24B-8472-43A7-81F5-70DA7A6C1604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08568D3C-1F0F-4DCC-8ED8-E3A657035AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08568D3C-1F0F-4DCC-8ED8-E3A657035AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08568D3C-1F0F-4DCC-8ED8-E3A657035AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08568D3C-1F0F-4DCC-8ED8-E3A657035AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D886F68A-30C5-4975-A04A-EA13034B8C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D886F68A-30C5-4975-A04A-EA13034B8C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D886F68A-30C5-4975-A04A-EA13034B8C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D886F68A-30C5-4975-A04A-EA13034B8C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{809900FC-2BA5-409D-BE0B-7E5CBB39BA04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809900FC-2BA5-409D-BE0B-7E5CBB39BA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809900FC-2BA5-409D-BE0B-7E5CBB39BA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809900FC-2BA5-409D-BE0B-7E5CBB39BA04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F06DEEDE-4AED-4883-9066-E8F92B59C30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F06DEEDE-4AED-4883-9066-E8F92B59C30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F06DEEDE-4AED-4883-9066-E8F92B59C30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F06DEEDE-4AED-4883-9066-E8F92B59C30E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DCEA24B-8472-43A7-81F5-70DA7A6C1604} = {67B2A1CC-6143-4C2F-B93D-FC9CA60A3203}
+		{D886F68A-30C5-4975-A04A-EA13034B8C3A} = {67B2A1CC-6143-4C2F-B93D-FC9CA60A3203}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EC86006-6F69-4B5F-8A43-F67B418B5BFE}
+	EndGlobalSection
+EndGlobal

@@ -8,11 +8,11 @@
 ('{0278E164-7B7A-4C7C-BF72-EB0A53828DA6}','что-то еще');
 
 insert into users values
-('{978963E4-6C68-450B-9227-15EF6AD3CE45}','login1','password1',false,'2018-01-01 00:00:00'),
+('{978963E4-6C68-450B-9227-15EF6AD3CE45}','login1','password1',true,'2018-01-01 00:00:00'),
 ('{99FABD85-A786-4A4E-AE84-DFA71B005C56}','login2','password2',false,'2018-01-01 00:00:00'),
-('{F7EA2706-C718-4AA0-AACA-0526FCA56B9F}','login3','password3',false,'2018-01-01 00:00:00'),
+('{F7EA2706-C718-4AA0-AACA-0526FCA56B9F}','login3','password3',true,'2018-01-01 00:00:00'),
 ('{7218A60E-77D1-4971-A7FD-487629425F8E}','login4','password4',false,'2018-01-01 00:00:00'),
-('{374EF70A-18AE-49D3-BDF1-C788ADECC9CF}','login5','password5',false,'2018-01-01 00:00:00'),
+('{374EF70A-18AE-49D3-BDF1-C788ADECC9CF}','login5','password5',true,'2018-01-01 00:00:00'),
 ('{B8AC5585-BC2D-43BC-AF64-2EBD61B994F7}','login6','password6',false,'2018-01-01 00:00:00');
 
 insert into classes values

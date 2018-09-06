@@ -65,5 +65,14 @@ namespace DashaLearning.DataBase.Npgsql
 
             return result.FirstOrDefault();
         }
+
+        public async Task<IEnumerable<User>> GetAllUsersLite()
+        {
+            var query = $@"select {_userMap.ForAllProps()}
+                        from {_userMap.TableName}";
+
+            var users = await GetAwaitableDataCollectionLoader<User>(query);
+            return users;
+        }
     }
 }

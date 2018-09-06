@@ -28,7 +28,7 @@ namespace DashaLearning.WinForm
             _userRepository = new UserRepository(_connectionString);
         }
 
-        private async void Button1_Click(object sender, EventArgs e)
+        private async void ButtonGetUserByIdLite(object sender, EventArgs e)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace DashaLearning.WinForm
             }
         }
 
-        private async void button2_Click(object sender, EventArgs e)
+        private async void ButtonGetUserById(object sender, EventArgs e)
         {
             try
             {
@@ -78,7 +78,32 @@ namespace DashaLearning.WinForm
             {
                 MessageBox.Show("Что-то пошло не так, мразь");
             }
-            //////
+        }
+
+        private async void ButtonGetAllUsersLite(object sender, EventArgs e)
+        {
+            try
+            {
+                var users = await _userRepository.GetAllUsersLite();
+                if (users != null && users.Any())
+                {
+                    string usersInfo = "";
+                    foreach (var user in users)
+                    {
+                        usersInfo += $"id: {user.Id}, логин: {user.Login}, онлайн: {(user.IsOnline ? "да" : "нет")}{Environment.NewLine}";
+                    }
+
+                    MessageBox.Show($"Пользователи:{Environment.NewLine}{usersInfo}");
+                }
+                else
+                {
+                    MessageBox.Show("Пока нет ни одного пользователя");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так, мразь");
+            }
         }
     }
 }

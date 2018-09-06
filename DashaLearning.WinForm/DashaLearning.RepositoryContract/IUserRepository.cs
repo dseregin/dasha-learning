@@ -21,5 +21,10 @@ namespace DashaLearning.RepositoryContract
         /// <param name="id"></param>
         /// <returns></returns>
         Task<User> GetUserById(Guid id);
+        /// <summary>
+        /// Получение всех пользователей
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<User>> GetAllUsersLite();
     }
 }

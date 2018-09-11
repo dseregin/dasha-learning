@@ -105,6 +105,5 @@ namespace DashaLearning.WinForm
                 MessageBox.Show("Что-то пошло не так, мразь");
             }
         }
-        ///
     }
 }

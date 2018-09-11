@@ -7,27 +7,30 @@ using System.Threading.Tasks;
 namespace DashaLearning.Model
 {
     /// <summary>
-    /// Класс Стат
+    /// Класс Характеристики персонажа
     /// </summary>
-    public class Stat
+    public class PersonCharacteristic
     {
         /// <summary>
         /// Свойство получает/задает значение Id
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Интеллект
+        /// Свойство получает/задает значение Жизнь
         /// </summary>
-        public int IntellectValue { get; set; }
+        public int MaxHp { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Ловкость
+        /// Свойство получает/задает значение Мана
         /// </summary>
-        public int AgilityValue { get; set; }
+        public int MaxMana { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Сила
+        /// Свойство получает/задает значение Опыт
         /// </summary>
-        public int StrenghtValue { get; set; }
-
+        public int Experience { get; set; }
+        /// <summary>
+        /// Свойство получает/задает значение Уровень
+        /// </summary>
+        public int Level { get; set; }
         #region person
         /// <summary>
         /// Свойство получает/задает значение Id Персонажа
@@ -38,6 +41,5 @@ namespace DashaLearning.Model
         /// </summary>
         public Person Person { get; set; }
         #endregion
-
     }
 }

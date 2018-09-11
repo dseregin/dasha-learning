@@ -3,7 +3,7 @@
 namespace DashaLearning.Model
 {
     /// <summary>
-    /// Класс Класс
+    /// Класс Класс fvdfb
     /// </summary>
     public class Class
     {
@@ -16,7 +16,7 @@ namespace DashaLearning.Model
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Другие характерстики
+        /// Свойство получает/задает значение Другие характерстики gndg
         /// </summary>
         public string SomeCharacteristics { get; set; }
     }

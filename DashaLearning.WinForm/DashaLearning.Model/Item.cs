@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DashaLearning.Model
 {
     /// <summary>
-    /// Класс Предмет
+    /// Класс Предмет чптичап
     /// </summary>
     public class Item
     {

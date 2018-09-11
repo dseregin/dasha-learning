@@ -103,7 +103,7 @@ namespace DashaLearning.WinForm
             catch (Exception ex)
             {
                 MessageBox.Show("Что-то пошло не так, мразь");
-            }
+            }////////
         }
     }
 }

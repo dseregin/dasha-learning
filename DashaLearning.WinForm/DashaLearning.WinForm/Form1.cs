@@ -1,31 +1,29 @@
-﻿using DashaLearning.DataBase.Npgsql;
+﻿using DashaLearning.BaseComponent.Help;
+using DashaLearning.DataBase.Npgsql;
 using DashaLearning.RepositoryContract;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DashaLearning.WinForm
 {
     public partial class Form1 : Form
     {
-        private string _connectionString = "Server=localhost;Port=5432;Database=game_db;Persist Security Info=True;uid=postgres;pwd=postgres;Pooling=true;MaxPoolSize=1000;Timeout=300;CommandTimeout=300;";
+        private string _connectionString;
         private IUserRepository _userRepository;
 
         public Form1()
         {
             InitializeComponent();
+
+            _connectionString = ConfigHelper.ConnectionString;
+
             InitRepos();
         }
 
         private void InitRepos()
         {
-            _userRepository = new UserRepository(_connectionString);
+            _userRepository = new UserRepository();
         }
 
         private async void ButtonGetUserByIdLite(object sender, EventArgs e)

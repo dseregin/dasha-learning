@@ -67,6 +67,10 @@
       <Project>{2DCEA24B-8472-43A7-81F5-70DA7A6C1604}</Project>
       <Name>DataBase.Mapping</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DashaLearning.BaseComponent\DashaLearning.BaseComponent.csproj">
+      <Project>{ECD61681-0AA0-4ED9-9344-816D6613BB9B}</Project>
+      <Name>DashaLearning.BaseComponent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DashaLearning.Model\DashaLearning.Model.csproj">
       <Project>{08568D3C-1F0F-4DCC-8ED8-E3A657035AB7}</Project>
       <Name>DashaLearning.Model</Name>

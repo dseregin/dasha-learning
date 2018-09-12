@@ -65,6 +65,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,6 +82,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DashaLearning.BaseComponent\DashaLearning.BaseComponent.csproj">
+      <Project>{ecd61681-0aa0-4ed9-9344-816d6613bb9b}</Project>
+      <Name>DashaLearning.BaseComponent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DashaLearning.DataBase.Npgsql\DashaLearning.DataBase.Npgsql.csproj">
       <Project>{D886F68A-30C5-4975-A04A-EA13034B8C3A}</Project>
       <Name>DashaLearning.DataBase.Npgsql</Name>

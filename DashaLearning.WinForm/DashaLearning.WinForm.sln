@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashaLearning.RepositoryCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashaLearning.ServiceContract", "DashaLearning.ServiceContract\DashaLearning.ServiceContract.csproj", "{F06DEEDE-4AED-4883-9066-E8F92B59C30E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashaLearning.BaseComponent", "DashaLearning.BaseComponent\DashaLearning.BaseComponent.csproj", "{ECD61681-0AA0-4ED9-9344-816D6613BB9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{F06DEEDE-4AED-4883-9066-E8F92B59C30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F06DEEDE-4AED-4883-9066-E8F92B59C30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F06DEEDE-4AED-4883-9066-E8F92B59C30E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD61681-0AA0-4ED9-9344-816D6613BB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD61681-0AA0-4ED9-9344-816D6613BB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD61681-0AA0-4ED9-9344-816D6613BB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD61681-0AA0-4ED9-9344-816D6613BB9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

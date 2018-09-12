@@ -23,7 +23,7 @@ namespace DashaLearning.DataBase.Npgsql
             });
         }
 
-        public UserRepository(string connectionString) : base(connectionString)
+        public UserRepository() : base()
         {
             _userMap = ColumnMapping.GetFor<User>();
             _personMap = ColumnMapping.GetFor<Person>();

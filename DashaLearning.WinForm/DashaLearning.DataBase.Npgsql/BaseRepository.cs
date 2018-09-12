@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DashaLearning.BaseComponent.Help;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace DashaLearning.DataBase.Npgsql
     public abstract class BaseRepository
     {
         private string _connectionString;
-        public BaseRepository(string connectionString)
+        public BaseRepository()
         {
-            _connectionString = connectionString;
+            _connectionString = ConfigHelper.ConnectionString;
         }
 
         public string GetConnectionString()

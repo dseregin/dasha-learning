@@ -1,5 +1,4 @@
-﻿using DashaLearning.BaseComponent.Help;
-using DashaLearning.DataBase.Npgsql;
+﻿using DashaLearning.DataBase.Npgsql;
 using DashaLearning.RepositoryContract;
 using System;
 using System.Linq;
@@ -9,15 +8,11 @@ namespace DashaLearning.WinForm
 {
     public partial class Form1 : Form
     {
-        private string _connectionString;
         private IUserRepository _userRepository;
 
         public Form1()
         {
             InitializeComponent();
-
-            _connectionString = ConfigHelper.ConnectionString;
-
             InitRepos();
         }
 

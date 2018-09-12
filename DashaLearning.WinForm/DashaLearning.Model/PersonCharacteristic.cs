@@ -12,32 +12,33 @@ namespace DashaLearning.Model
     public class PersonCharacteristic
     {
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Жизнь
+        /// Жизнь
         /// </summary>
         public int MaxHp { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Мана
+        /// Мана
         /// </summary>
         public int MaxMana { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Опыт
+        /// Опыт
         /// </summary>
         public int Experience { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Уровень
+        /// Уровень
         /// </summary>
         public int Level { get; set; }
+
         #region person
         /// <summary>
-        /// Свойство получает/задает значение Id Персонажа
+        /// Id Персонажа
         /// </summary>
         public Guid PersonId { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Персонажа
+        /// Персонаж
         /// </summary>
         public Person Person { get; set; }
         #endregion

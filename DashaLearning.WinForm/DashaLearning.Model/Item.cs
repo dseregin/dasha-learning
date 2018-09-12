@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DashaLearning.Model
 {
     /// <summary>
-    /// Класс Предмет чптичап
+    /// Класс Предмет
     /// </summary>
     public class Item
     {
@@ -19,28 +19,28 @@ namespace DashaLearning.Model
             PersonsItems = new List<PersonsItem>();
         }
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Название предмета
+        /// Название предмета
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Описание предмета
+        /// Описание предмета
         /// </summary>
         public string Description { get; set; }
         /// <summary>
-        /// Свойство получает/задает список Предметы персонажа
+        /// Предметы персонажа
         /// </summary>
         public List<PersonsItem> PersonsItems { get; set; }
         #region Type
         /// <summary>
-        /// Свойство получает/задает значение Id Типа
+        /// Id Типа
         /// </summary>
         public Guid TypeId { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Тип
+        /// Тип
         /// </summary>
         public Type Type { get; set; }
         #endregion

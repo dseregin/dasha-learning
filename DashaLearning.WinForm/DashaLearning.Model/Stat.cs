@@ -12,29 +12,29 @@ namespace DashaLearning.Model
     public class Stat
     {
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Интеллект
+        /// Интеллект
         /// </summary>
         public int IntellectValue { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Ловкость
+        /// Ловкость
         /// </summary>
         public int AgilityValue { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Сила
+        /// Сила
         /// </summary>
         public int StrenghtValue { get; set; }
 
         #region person
         /// <summary>
-        /// Свойство получает/задает значение Id Персонажа
+        /// Id Персонажа
         /// </summary>
         public Guid PersonId { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Персонажа
+        /// Персонаж
         /// </summary>
         public Person Person { get; set; }
         #endregion

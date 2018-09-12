@@ -3,20 +3,20 @@
 namespace DashaLearning.Model
 {
     /// <summary>
-    /// Класс Класс fvdfb
+    /// Класс
     /// </summary>
     public class Class
     {
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Название класса
+        /// Название класса
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Другие характерстики gndg
+        /// Другие характерстики
         /// </summary>
         public string SomeCharacteristics { get; set; }
     }

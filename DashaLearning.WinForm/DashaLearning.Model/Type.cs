@@ -12,11 +12,11 @@ namespace DashaLearning.Model
     public class Type
     {
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Название типа
+        /// Название типа
         /// </summary>
         public string Name { get; set; }
     }

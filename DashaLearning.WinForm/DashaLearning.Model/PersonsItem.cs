@@ -12,31 +12,34 @@ namespace DashaLearning.Model
     public class PersonsItem
     {
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
+       
         #region Person
         /// <summary>
-        /// Свойство получает/задает значение Id Персонажа
+        /// Id Персонажа
         /// </summary>
         public Guid PersonId { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Предмет
+        /// Персонаж
         /// </summary>
         public Person Person { get; set; }
         #endregion
+
         #region Item
         /// <summary>
-        /// Свойство получает/задает значение Id Предмета
+        /// Id Предмета
         /// </summary>
         public Guid ItemId { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Предмет
+        /// Предмет
         /// </summary>
         public Item Item { get; set; }
         #endregion
+
         /// <summary>
-        /// Свойство получает/задает значение Количество 
+        /// Количество 
         /// </summary>
         public int Count { get; set; }
 

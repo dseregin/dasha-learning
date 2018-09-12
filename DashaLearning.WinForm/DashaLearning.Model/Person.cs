@@ -16,47 +16,51 @@ namespace DashaLearning.Model
             PersonsSkills = new List<PersonsSkill>();
         }
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
+
         #region User
         /// <summary>
-        /// Свойство получает/задает значение Id Пользователь
+        /// Id Пользователь
         /// </summary>
         public Guid UserId { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Пользователь
+        /// Пользователь
         /// </summary>
         public User User { get; set; }
         #endregion
+
         /// <summary>
-        /// Свойство получает/задает значение Имя персонажа
+        /// Имя персонажа
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Пол
+        /// Пол
         /// </summary>
         public bool Male { get; set; }
+
         #region Class
         /// <summary>
-        /// Свойство получает/задает значение Id Класса
+        /// Id Класса
         /// </summary>
         public Guid ClassId { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Класс
+        /// Класс
         /// </summary>
         public Class Class { get; set; }
         #endregion
+
         /// <summary>
-        /// Свойство получает/задает значение Стат
+        /// Стат (очки статистики)
         /// </summary>
         public Stat Stat { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Характеристики персонажа
+        /// Характеристики персонажа
         /// </summary>
         public PersonCharacteristic PersonCharacteristic { get; set; }
         /// <summary>
-        /// Свойство получает/задает список Скиллы персонажа
+        /// Скиллы персонажа
         /// </summary>
         public List<PersonsSkill> PersonsSkills { get; set; }
     }

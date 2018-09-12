@@ -19,19 +19,19 @@ namespace DashaLearning.Model
             PersonsSkills = new List<PersonsSkill>();
         }
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Название скилла
+        /// Название скилла
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Описание скилла
+        /// Описание скилла
         /// </summary>
         public string Description { get; set; }
         /// <summary>
-        /// Свойство получает/задает список Скиллы персонажа
+        /// Скиллы персонажа
         /// </summary>
         public List<PersonsSkill> PersonsSkills { get; set; }
     }

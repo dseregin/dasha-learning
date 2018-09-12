@@ -16,27 +16,27 @@ namespace DashaLearning.Model
             Persons = new List<Person>();
         }
         /// <summary>
-        /// Свойство получает/задает значение Id
+        /// Id
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Логин
+        /// Логин
         /// </summary>
         public string Login { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Пароль
+        /// Пароль
         /// </summary>
         public string Password { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Статус
+        /// Статус
         /// </summary>
         public bool IsOnline { get; set; }
         /// <summary>
-        /// Свойство получает/задает значение Последнее посещение
+        /// Последнее посещение
         /// </summary>
         public DateTime LastOnlineDate { get; set; }
         /// <summary>
-        /// Свойство получает/задает список Персонажи
+        /// список Персонажей пользователя
         /// </summary>
         public List<Person> Persons { get; set; }
     }

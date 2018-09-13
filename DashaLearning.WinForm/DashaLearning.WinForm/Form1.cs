@@ -9,6 +9,7 @@ namespace DashaLearning.WinForm
     public partial class Form1 : Form
     {
         private IUserRepository _userRepository;
+        private IPersonRepository _personRepository;
 
         public Form1()
         {
@@ -19,6 +20,7 @@ namespace DashaLearning.WinForm
         private void InitRepos()
         {
             _userRepository = new UserRepository();
+            _personRepository = new PersonRepository();
         }
 
         private async void ButtonGetUserByIdLite(object sender, EventArgs e)
@@ -96,6 +98,44 @@ namespace DashaLearning.WinForm
             catch (Exception ex)
             {
                 MessageBox.Show("Что-то пошло не так, мразь");
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void ButtonGetPersonByIdLite(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                var persons = await _personRepository.GetAllPersonsLite();
+                if (persons != null && persons.Any())
+                {
+                    string personsInfo = "";
+                    foreach (var person in persons)
+                    {
+                        personsInfo += $"id: {person.Id}, имя: {person.Name}, пол: {person.Male}{Environment.NewLine}";
+                    }
+
+                    MessageBox.Show($"Пользователи:{Environment.NewLine}{personsInfo}");
+                }
+                else
+                {
+                    MessageBox.Show("Пока нет ни одного пользователя");
+                }
+                MessageBox.Show("fgjhfgя");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так, тварь");
             }
         }
     }

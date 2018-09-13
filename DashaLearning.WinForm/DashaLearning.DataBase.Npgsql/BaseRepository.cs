@@ -1,5 +1,7 @@
 ﻿using Dapper;
+using DashaLearning.BaseComponent;
 using DashaLearning.BaseComponent.Help;
+using NLog;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -12,9 +14,12 @@ namespace DashaLearning.DataBase.Npgsql
     public abstract class BaseRepository
     {
         private string _connectionString;
+        protected ILogger _logger;
         public BaseRepository()
         {
             _connectionString = ConfigHelper.ConnectionString;
+            var container = DiContainer.GetContainer();
+            _logger = container.GetInstance<ILogger>();
         }
 
         public string GetConnectionString()

@@ -1,5 +1,8 @@
-﻿using DashaLearning.DataBase.Npgsql;
+﻿using DashaLearning.BaseComponent;
+using DashaLearning.BaseComponent.Help;
+using DashaLearning.DataBase.Npgsql;
 using DashaLearning.RepositoryContract;
+using NLog;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,15 +13,37 @@ namespace DashaLearning.WinForm
     {
         private IUserRepository _userRepository;
 
+        private ILogger _logger;
+
         public Form1()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            var container = DiContainer.GetContainer();
+            _logger = container.GetInstance<ILogger>();
+
             InitializeComponent();
             InitRepos();
         }
 
         private void InitRepos()
         {
-            _userRepository = new UserRepository();
+            _logger.Info("Инициализация репозиториев...");
+            try
+            {
+                _userRepository = new UserRepository();
+
+                _logger.Info("Инициализация репозиториев выполнена");
+            }
+            catch (Exception ex)
+            {
+                var detail = $"Ошибка Инициализации репозиториев: {ErrorProcessing.ExceptionMessageToString(ex)}";
+                _logger.Error(detail);
+            }
+
         }
 
         private async void ButtonGetUserByIdLite(object sender, EventArgs e)
@@ -65,10 +90,14 @@ namespace DashaLearning.WinForm
             }
             catch (FormatException ex)
             {
+                var detail = $"Неверный формат id.{Environment.NewLine}{ErrorProcessing.ExceptionMessageToString(ex)}";
+                _logger.Error(detail);
                 MessageBox.Show("Неверный формат id");
             }
             catch (Exception ex)
             {
+                var detail = $"Что-то пошло не так, мразь. {Environment.NewLine}{ErrorProcessing.ExceptionMessageToString(ex)}";
+                _logger.Error(detail);
                 MessageBox.Show("Что-то пошло не так, мразь");
             }
         }

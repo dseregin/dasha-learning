@@ -1,6 +1,7 @@
 ﻿using DashaLearning.Model;
 using DashaLearning.RepositoryContract;
 using DataBase.Mapping;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;

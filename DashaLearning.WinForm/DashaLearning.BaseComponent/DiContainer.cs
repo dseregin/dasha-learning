@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace DashaLearning.BaseComponent
 {
+    /// <summary>
+    /// Контейнер
+    /// </summary>
     public static class DiContainer
     {
         public static IContainer GetContainer()

@@ -1,4 +1,5 @@
-﻿using DashaLearning.Model;
+﻿using DashaLearning.BaseComponent.Help;
+using DashaLearning.Model;
 using DashaLearning.RepositoryContract;
 using DataBase.Mapping;
 using NLog;
@@ -33,6 +34,8 @@ namespace DashaLearning.DataBase.Npgsql
 
         public async Task<User> GetUserById(Guid id)
         {
+            this.LogOnMethodEnter();
+
             var query = $@"select {_userMap.ForAllProps("u")}, {_personMap.ForAllProps("p")}
                             from {_userMap.TableName} as u
                             left join {_personMap.TableName} as p
@@ -53,27 +56,32 @@ namespace DashaLearning.DataBase.Npgsql
                 }
                 return u;
             });
-            return result.FirstOrDefault();
+            return this.LogOnReturn(result.FirstOrDefault());
         }
 
         public async Task<User> GetUserByIdLite(Guid id)
         {
+            this.LogOnMethodEnter();
+
             var query = $@"select {_userMap.ForAllProps()}
                             from {_userMap.TableName}
                             where {_userMap.ColumnName(c => c.Id)} = '{id}'";
 
             var result = await GetAwaitableDataCollectionLoader<User>(query);
 
-            return result.FirstOrDefault();
+            return this.LogOnReturn(result.FirstOrDefault());
         }
 
         public async Task<IEnumerable<User>> GetAllUsersLite()
         {
+            this.LogOnMethodEnter();
+
             var query = $@"select {_userMap.ForAllProps()}
                         from {_userMap.TableName}";
 
             var users = await GetAwaitableDataCollectionLoader<User>(query);
-            return users;
+
+            return this.LogOnReturn(users);
         }
     }
 }

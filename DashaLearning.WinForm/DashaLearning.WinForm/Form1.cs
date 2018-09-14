@@ -24,6 +24,7 @@ namespace DashaLearning.WinForm
         {
             var container = DiContainer.GetContainer();
             _logger = container.GetInstance<ILogger>();
+            LogMethodHelper.Logger = _logger;
 
             InitializeComponent();
             InitRepos();
@@ -31,23 +32,30 @@ namespace DashaLearning.WinForm
 
         private void InitRepos()
         {
-            _logger.Info("Инициализация репозиториев...");
+            _logger.Debug("Инициализация репозиториев...");
             try
             {
                 _userRepository = new UserRepository();
 
-                _logger.Info("Инициализация репозиториев выполнена");
+                _logger.Debug("Инициализация репозиториев выполнена");
             }
             catch (Exception ex)
             {
                 var detail = $"Ошибка Инициализации репозиториев: {ErrorProcessing.ExceptionMessageToString(ex)}";
                 _logger.Error(detail);
             }
+        }
 
+        private void LogDetailError(string message, Exception ex)
+        {
+            var detail = $"{message}: {ErrorProcessing.ExceptionMessageToString(ex)}";
+            _logger.Error(detail);
+            MessageBox.Show($"{message}");
         }
 
         private async void ButtonGetUserByIdLite(object sender, EventArgs e)
         {
+            this.LogOnMethodEnter();
             try
             {
                 var id = userIdTextBox.Text;
@@ -57,16 +65,20 @@ namespace DashaLearning.WinForm
             }
             catch (FormatException ex)
             {
-                MessageBox.Show("Неверный формат id");
+                var message = "Неверный формат id";
+                LogDetailError(message, ex);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Что-то пошло не так, мразь");
+                var message = "Что-то пошло не так, мразь";
+                LogDetailError(message, ex);
             }
+            this.LogOnMethodExit();
         }
 
         private async void ButtonGetUserById(object sender, EventArgs e)
         {
+            this.LogOnMethodEnter();
             try
             {
                 var id = userIdTextBox.Text;
@@ -90,20 +102,20 @@ namespace DashaLearning.WinForm
             }
             catch (FormatException ex)
             {
-                var detail = $"Неверный формат id.{Environment.NewLine}{ErrorProcessing.ExceptionMessageToString(ex)}";
-                _logger.Error(detail);
-                MessageBox.Show("Неверный формат id");
+                var message = "Неверный формат id";
+                LogDetailError(message, ex);
             }
             catch (Exception ex)
             {
-                var detail = $"Что-то пошло не так, мразь. {Environment.NewLine}{ErrorProcessing.ExceptionMessageToString(ex)}";
-                _logger.Error(detail);
-                MessageBox.Show("Что-то пошло не так, мразь");
+                var message = "Что-то пошло не так, мразь";
+                LogDetailError(message, ex);
             }
+            this.LogOnMethodExit();
         }
 
         private async void ButtonGetAllUsersLite(object sender, EventArgs e)
         {
+            this.LogOnMethodEnter();
             try
             {
                 var users = await _userRepository.GetAllUsersLite();
@@ -124,8 +136,10 @@ namespace DashaLearning.WinForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Что-то пошло не так, мразь");
+                var message = "Что-то пошло не так, мразь";
+                LogDetailError(message, ex);
             }
+            this.LogOnMethodExit();
         }
     }
 }

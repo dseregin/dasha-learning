@@ -1,13 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DashaLearning.BaseComponent.Help
 {
+    /// <summary>
+    /// Класс для получения детальной информаци об ошибке
+    /// </summary>
     public static class ErrorProcessing
     {
+        /// <summary>
+        /// Получение детальной информации об ошибке
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <param name="appendStackTrace">Отобразить стек вызовов</param>
+        /// <returns></returns>
         public static string ExceptionMessageToString(Exception exception, bool appendStackTrace = true)
         {
             StringBuilder messageBuilder = new StringBuilder();

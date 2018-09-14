@@ -112,6 +112,8 @@
     <Compile Include="Help\ConfigHelper.cs" />
     <Compile Include="Help\ErrorProcessing.cs" />
     <Compile Include="Help\LogMethodHelper.cs" />
+    <Compile Include="Mail\MailSender.cs" />
+    <Compile Include="Mail\MailSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

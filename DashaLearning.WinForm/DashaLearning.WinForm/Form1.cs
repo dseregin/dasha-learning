@@ -1,9 +1,11 @@
 ﻿using DashaLearning.BaseComponent;
 using DashaLearning.BaseComponent.Help;
+using DashaLearning.BaseComponent.Mail;
 using DashaLearning.DataBase.Npgsql;
 using DashaLearning.RepositoryContract;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -116,6 +118,19 @@ namespace DashaLearning.WinForm
         private async void ButtonGetAllUsersLite(object sender, EventArgs e)
         {
             this.LogOnMethodEnter();
+
+            //var mailSettings = new MailSettings()
+            //{
+            //    EmailHost = ConfigHelper.EmailHost,
+            //    EmailPort = ConfigHelper.EmailPort,
+            //    EmailUserName = ConfigHelper.EmailUserName,
+            //    EmailPassword = ConfigHelper.EmailPassword,
+            //    EmailSSLEnabled = ConfigHelper.EmailSSLEnabled
+            //};
+
+            //var emails = new List<string>() { "sederom3@mail.ru" };
+            //MailSender.SendEmail(mailSettings, emails.ToArray(), "Test mail send", "Password");
+
             try
             {
                 var users = await _userRepository.GetAllUsersLite();

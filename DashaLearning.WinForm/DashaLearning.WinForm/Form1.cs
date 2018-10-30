@@ -72,7 +72,7 @@ namespace DashaLearning.WinForm
             }
             catch (Exception ex)
             {
-                var message = "Что-то пошло не так, мразь";
+                var message = "Что-то пошло не так";
                 LogDetailError(message, ex);
             }
             this.LogOnMethodExit();
@@ -109,7 +109,7 @@ namespace DashaLearning.WinForm
             }
             catch (Exception ex)
             {
-                var message = "Что-то пошло не так, мразь";
+                var message = "Что-то пошло не так";
                 LogDetailError(message, ex);
             }
             this.LogOnMethodExit();
@@ -151,7 +151,7 @@ namespace DashaLearning.WinForm
             }
             catch (Exception ex)
             {
-                var message = "Что-то пошло не так, мразь";
+                var message = "Что-то пошло не так";
                 LogDetailError(message, ex);
             }
             this.LogOnMethodExit();

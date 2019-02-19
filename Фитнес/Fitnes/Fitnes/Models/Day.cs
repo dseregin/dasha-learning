@@ -18,5 +18,12 @@ namespace Fitnes.Models
 
         [Column("calories")]
         public int Calories { get; set; }
+
+        public virtual ICollection<DayTrainingCapasity> DayTrainingCapasities { get; set; }
+
+        public Day()
+        {
+            DayTrainingCapasities = new List<DayTrainingCapasity>();
+        }
     }
 }

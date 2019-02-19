@@ -9,14 +9,31 @@
 				<comment><![CDATA[количество подходов]]></comment>
 			</column>
 			<column name="repetitions_count" type="integer" jt="4" />
+			<column name="result_count" type="integer" jt="4" >
+				<defo>0</defo>
+			</column>
+			<column name="repetitions_count_unit_type_id" type="uuid" jt="1111" />
+			<column name="result_count_unit_id" type="uuid" jt="1111" />
 			<index name="pk_capasity_id" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
+			<index name="idx_capasity_repetitions_count_unit_type_id" unique="NORMAL" >
+				<column name="repetitions_count_unit_type_id" />
+			</index>
+			<index name="idx_capasity_result_count_unit_id" unique="NORMAL" >
+				<column name="result_count_unit_id" />
+			</index>
+			<fk name="fk_capasity_unit_types" to_schema="public" to_table="unit_types" >
+				<fk_column name="repetitions_count_unit_type_id" pk="id" />
+			</fk>
+			<fk name="fk_capasity_unit_types_res" to_schema="public" to_table="unit_types" >
+				<fk_column name="result_count_unit_id" pk="id" />
+			</fk>
 		</table>
 		<table name="day" >
 			<column name="id" type="uuid" jt="1111" mandatory="y" />
-			<column name="&quot;date&quot;" type="date" jt="91" />
 			<column name="calories" type="integer" jt="4" />
+			<column name="date" type="date" length="13" decimal="0" jt="91" />
 			<index name="pk_day_id" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -24,7 +41,7 @@
 		<table name="day_training_capasity" >
 			<column name="id" type="serial" jt="4" mandatory="y" />
 			<column name="day_id" type="uuid" jt="1111" />
-			<column name="exercise_capasity_id" type="integer" jt="4" />
+			<column name="gym_exercise_capasity_id" type="integer" jt="4" />
 			<index name="pk_day_training_capasity_id" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -32,33 +49,13 @@
 				<column name="day_id" />
 			</index>
 			<index name="idx_day_training_capasity_exercise_capasity_id" unique="NORMAL" >
-				<column name="exercise_capasity_id" />
+				<column name="gym_exercise_capasity_id" />
 			</index>
 			<fk name="fk_day_training_capasity_day" to_schema="public" to_table="day" >
 				<fk_column name="day_id" pk="id" />
 			</fk>
-			<fk name="fk_day_training_capasity" to_schema="public" to_table="exercises_capasity" >
-				<fk_column name="exercise_capasity_id" pk="id" />
-			</fk>
-		</table>
-		<table name="exercises_capasity" >
-			<column name="id" type="serial" jt="4" mandatory="y" />
-			<column name="exercise_id" type="uuid" jt="1111" />
-			<column name="capasity_id" type="uuid" jt="1111" />
-			<index name="pk_exercises_capasity_id" unique="PRIMARY_KEY" >
-				<column name="id" />
-			</index>
-			<index name="idx_exercises_capasity_exercise_id" unique="NORMAL" >
-				<column name="exercise_id" />
-			</index>
-			<index name="idx_exercises_capasity_capasity_id" unique="NORMAL" >
-				<column name="capasity_id" />
-			</index>
-			<fk name="fk_exercises_capasity" to_schema="public" to_table="gym_exercises" >
-				<fk_column name="exercise_id" pk="id" />
-			</fk>
-			<fk name="fk_exercises_capasity_capasity" to_schema="public" to_table="capasity" >
-				<fk_column name="capasity_id" pk="id" />
+			<fk name="fk_day_training_capasity" to_schema="public" to_table="gym_exercises_capasity" >
+				<fk_column name="gym_exercise_capasity_id" pk="id" />
 			</fk>
 		</table>
 		<table name="gym_exercises" >
@@ -76,6 +73,26 @@
 				<fk_column name="training_type_id" pk="id" />
 			</fk>
 		</table>
+		<table name="gym_exercises_capasity" >
+			<column name="id" type="serial" jt="4" mandatory="y" />
+			<column name="capasity_id" type="uuid" jt="1111" />
+			<column name="gym_exercise_id" type="uuid" jt="1111" />
+			<index name="pk_gym_exercises_capasity_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_gym_exercises_capasity_capasity_id" unique="NORMAL" >
+				<column name="capasity_id" />
+			</index>
+			<index name="idx_gym_exercises_capasity_gym_exercise_id" unique="NORMAL" >
+				<column name="gym_exercise_id" />
+			</index>
+			<fk name="fk_gym_exercises_capasity" to_schema="public" to_table="capasity" >
+				<fk_column name="capasity_id" pk="id" />
+			</fk>
+			<fk name="fk_gym_exercises_capasity_g" to_schema="public" to_table="gym_exercises" >
+				<fk_column name="gym_exercise_id" pk="id" />
+			</fk>
+		</table>
 		<table name="training_type" >
 			<comment><![CDATA[Виды тренировок (силовые, групповые, кардио и т.д.)]]></comment>
 			<column name="id" type="uuid" jt="1111" mandatory="y" />
@@ -84,15 +101,27 @@
 				<column name="id" />
 			</index>
 		</table>
+		<table name="unit_types" >
+			<column name="id" type="uuid" jt="1111" mandatory="y" />
+			<column name="name" type="varchar" jt="12" />
+			<index name="pk_unit_types_id" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<sequence name="day_training_capasity_id_seq" start="1" />
+		<sequence name="day_training_capasity_id_seq1" start="1" />
+		<sequence name="exercises_capasity_id_seq" start="1" />
 	</schema>
 	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-42.1.4.jar" driver_desc="Standard" host="localhost" port="5432" instance="fitnes" user="postgres" passwd="Tk9DVHhBdjg=" />
+	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-42.1.4.jar" driver_desc="Standard" host="localhost" port="5432" instance="fitnes" user="postgres" passwd="Tk9DVHhBdjg=" />
 	<layout name="Default Layout" id="Layout_5646a75" show_relation="columns" >
-		<entity schema="public" name="gym_exercises" color="1f5182" x="705" y="345" />
-		<entity schema="public" name="capasity" color="1f5182" x="960" y="150" />
 		<entity schema="public" name="training_type" color="1f5182" x="495" y="345" />
-		<entity schema="public" name="exercises_capasity" color="1f5182" x="960" y="345" />
-		<entity schema="public" name="day_training_capasity" color="1f5182" x="930" y="600" />
 		<entity schema="public" name="day" color="1f5182" x="735" y="600" />
+		<entity schema="public" name="gym_exercises" color="1f5182" x="705" y="345" />
+		<entity schema="public" name="unit_types" color="1f5182" x="780" y="150" />
+		<entity schema="public" name="capasity" color="1f5182" x="960" y="150" />
+		<entity schema="public" name="day_training_capasity" color="1f5182" x="930" y="600" />
+		<entity schema="public" name="gym_exercises_capasity" color="1f5182" x="975" y="360" />
 		<callout x="45" y="45" pointer="NO" >
 			<comment><![CDATA[Create new tables by right-clicking the layout, new foreign keys by drag and drop of one column over a primary key column.
 For a better design create multiple layouts (diagrams) with the same or different tables.

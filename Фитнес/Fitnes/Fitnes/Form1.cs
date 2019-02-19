@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,13 +17,10 @@ namespace Fitnes
         {
             InitializeComponent();
 
-            using (var db = new FatnesDataBase("public"))
+            using (var db = new FitnesDataBase("public"))
             {
-                var day = db.Days.FirstOrDefault();
 
-                var newDay = new Models.Day { Id = Guid.NewGuid(), Date = new DateTime(2019, 02, 20), Calories = 100 };
-                db.Days.Add(newDay);
-                db.SaveChanges();
+                var ExerciseCapasity = db.ExerciseCapasities.ToList();
             }
         }
     }

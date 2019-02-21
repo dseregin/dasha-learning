@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Fitnes.Repositories
 {
-    public class BaseRepository
+    public abstract class BaseRepository
     {
-        private FitnesDataBase _fitnesDataBase;
+        protected static FitnesDataBase _fitnesDataBase;
         public BaseRepository()
         {
-            _fitnesDataBase = new FitnesDataBase();
+            if (_fitnesDataBase == null)
+                _fitnesDataBase = new FitnesDataBase();
         }
     }
 }

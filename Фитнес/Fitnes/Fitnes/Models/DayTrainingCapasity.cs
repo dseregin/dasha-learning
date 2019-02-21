@@ -17,7 +17,7 @@ namespace Fitnes.Models
         public Guid DayId { get; set; }
         public virtual Day Day { get; set; }
 
-        [Column("exercise_capasity_id")]
+        [Column("gym_exercise_capasity_id")]
         public int ExerciseCapasityId { get; set; }
         public virtual ExerciseCapasity ExerciseCapasity { get; set; }
     }

@@ -19,16 +19,16 @@ namespace Fitnes.Models
         [Column("repetitions_count")]
         public int RepetitionsCount { get; set; }
 
-        [Column("result_count")]
-        public int ResultCount { get; set; }
+        [Column("value")]
+        public int Value { get; set; }
 
         [Column("repetitions_count_unit_type_id")]
         public Guid RepetitionsCountUnitTypeId { get; set; }
         public virtual UnitType RepetitionsCountUnitType { get; set; }
 
-        [Column("result_count_unit_id")]
-        public Guid ResultCountUnitId { get; set; }
-        public virtual UnitType ResultCountUnit { get; set; }
+        [Column("value_unit_id")]
+        public Guid ValueUnitId { get; set; }
+        public virtual UnitType ValueUnit { get; set; }
 
         public virtual ICollection<ExerciseCapasity> ExerciseCapasities { get; set; }
 

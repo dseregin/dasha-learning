@@ -1,14 +1,9 @@
 ﻿using Fitnes.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fitnes
 {
-   public  class FitnesDataBase : DbContext
+    public  class FitnesDataBase : DbContext
    {
         private readonly string _schema;
 
